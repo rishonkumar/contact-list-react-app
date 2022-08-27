@@ -25,11 +25,10 @@ class ContactForm extends Component {
     });
   };
   handleAddressInputChange = (field, value) => {
-    // handle all address fields
     this.setState({
       address: {
-        ...this.state.address, //spread/copy previous value
-        [field]: value, //update new value of field
+        ...this.state.address,
+        [field]: value,
       },
     });
   };
@@ -51,8 +50,7 @@ class ContactForm extends Component {
       })
         .then((response) => response.json())
         .then((user) => {
-          console.log(user);
-          //callback function for app component to add new user to the users array for rendering new data
+          // console.log(user);
           this.props.formSubmit(user);
         });
     } else {
